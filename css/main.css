@@ -115,7 +115,7 @@ header .container .links a.active {padding-bottom: 1rem; border-bottom: 2px soli
         transform: scale(0);
         transition: 0.3s ease-in-out;
     }
-    .container nav .links a {display: block; margin-bottom: 2rem;}
+    .container nav .links a {display: block; margin-bottom: 2rem; margin-left: 0;}
     header .container nav .links a.seperate {border-left: 0; padding-left: 0;}
     header .container .links a.active {border-bottom: 0; padding-bottom: 0;}
 }
