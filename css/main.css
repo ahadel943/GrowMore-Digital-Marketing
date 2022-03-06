@@ -1,0 +1,237 @@
+/* Global Rules */
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ul {list-style: none;}
+a {text-decoration: none;}
+img {max-width: 100%;}
+.container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media  screen and (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium Screens */
+@media  screen and (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large Screens */
+@media  screen and (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Global Rules */
+/* Start variables */
+:root {
+    --main-color: #fb6d9d;
+    --secondary-color: #da5783;
+    --section-bg: #eef2f5;
+    --light-gray: #94959a;
+    --dark-gray: #4b4e57;
+    --white-color: #ffffff;
+    --section-padding: 100px;
+    font-size: 10px;
+}
+@font-face {
+    font-family: "logoplexi";
+    src: url("../assets/fonts/Logoplexi-Regular.woff");
+    font-display: block;
+}
+/* End variables */
+/* Start Components */
+.text {text-align: center;}
+.text h2 {
+    font-size: 3rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+}
+.text p {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: var(--light-gray);
+    width: 650px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+/* End Components */
+/* Start Header */
+header {
+    padding-top: 1rem;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .container .logo {
+    font-size: 3rem;
+    font-family: "logoplexi";
+    color: var(--white-color);
+}
+header .container .menu-icon {width: 3rem; display: none;}
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+header .container .links a {
+    font-size: 1.6rem;
+    color: var(--white-color);
+    font-weight: 500;
+    margin-left: 1.8rem;
+    text-transform: uppercase;
+}
+header .container .links a.seperate {
+    padding-left: 2rem;
+    border-left: 2px solid var(--white-color);}
+header .container .links a.active {padding-bottom: 1rem; border-bottom: 2px solid var(--main-color);}
+@media screen and (max-width: 992px) {
+    .container nav .menu-icon {display: block;}
+    .container nav .links {
+        padding-top: 2rem;
+        position: absolute;
+        top: calc(100% + 1rem);
+        right: 0;
+        background-color: var(--main-color);
+        width: 20rem;
+        text-align: center;
+        transform-origin: top right;
+        transform: scale(0);
+        transition: 0.3s ease-in-out;
+    }
+    .container nav .links a {display: block; margin-bottom: 2rem;}
+    header .container nav .links a.seperate {border-left: 0; padding-left: 0;}
+    header .container .links a.active {border-bottom: 0; padding-bottom: 0;}
+}
+/* End Header */
+/* Start Hero */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(../assets/images/bg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.hero .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 580px;
+    max-width: 100%;
+}
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: var(--white-color);
+    margin-bottom: 2rem;
+}
+.hero-text a {
+    font-size: 1.4rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 2.5rem;
+    transition: 0.3s ease-in-out;
+}
+.hero-text a:hover {background-color: var(--secondary-color);}
+/* End Hero */
+/* Start Mission */
+.mission {padding-top: var(--section-padding); padding-bottom: var(--section-padding);}
+/* End Mission */
+/* Start People */
+.people {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-bg);
+}
+.people .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 3rem;
+    margin: 3rem auto 0 auto;
+}
+.cards .card h3{
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    color: var(--dark-gray);
+}
+.cards .card hr{background-color: var(--light-gray); margin: 1rem 0;}
+.cards .card p{font-size: 1.6rem; color: var(--light-gray);}
+/* End People */
+/* Start Trial */
+.trial {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: var(--main-color);
+}
+.trial .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.trial .container p {color: var(--white-color); font-size: 2rem;}
+.trial .container a {
+    font-size: 1.4rem;
+    color: var(--white-color);
+    font-weight: 500;
+    background-color: var(--secondary-color);
+    padding: 1rem 2rem;
+    border-radius: 2.5rem;
+}
+@media screen and (max-width: 992px) {
+    .trial .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .trial .container p {margin-bottom: 2rem;}
+}
+/* End Trial */
+/* Start Footer */
+footer {padding-top: var(--section-padding); padding-bottom: var(--section-padding);}
+footer .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    text-align: center;
+}
+footer .nav h3, .support h3, .contact h3 {
+    font-size: 1.8rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+}
+footer li {margin-bottom: 1rem;}
+footer li a {font-size: 1.4rem; color: var(--light-gray);}
+footer .contact p {
+    color: var(--light-gray);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+footer .contact .phone {margin-bottom: 3rem;}
+footer .social {margin-bottom: 1.5rem;}
+footer img {width: 4rem; cursor: pointer;}
+footer span {font-size: 1.2rem; color: var(--light-gray);}
+@media screen and (max-width: 992px) {
+    footer .container {flex-direction: column; align-items: center;;}
+}
+/* End Footer */
